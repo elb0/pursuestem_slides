@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Statistics and Data Science</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nnenna Asidianya and Liza Bolton" />
+    <meta name="date" content="2021-04-24" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link rel="stylesheet" href="slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Statistics and Data Science
+## Pursue STEM 2021
+### Nnenna Asidianya and Liza Bolton
+### April 24, 2021
+
+---
+
+
+
+
+name: topics
+
+## Topics
+You can click the following links to navigate through the slides (in the HTML version).
+
+* [What are we doing today?](#welcome)
+* [What are statistics and data science?](#stats)
+* [What is algorithmic bias?](#bias)
+* [What can we learn from exploring and visualizing data from Spotify's API?](#spotify)
+
+---
+class: middle, center, inverse
+name: welcome
+# What are we doing today?
+
+.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+
+---
+
+&lt;img src="libs/images/2021-04-24_cherry-blossoms.jpg" width="88%" style="display: block; margin: auto;" /&gt;
+
+.small[.footnote[Cherry trees outside Robarts Library, University of Toronto, St George Campus, 2021-04-24]]
+
+---
+## Go to https://pollev.com/bolton to answer (keep the link open)
+
+&lt;img src="libs/images/bts.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+.footnote[Doesn't matter if you don't know who's who, just go with the vibe.]
+
+---
+## The plan
+
+* Meet Liza and Nnenna [20 minutes]
+* [What are statistics and data science?](#stats)  [10 minutes]
+* Scavenger hunt / break [5 minutes]
+* Scavenger hunt share [5 minutes]
+* [What is algorithmic bias?](#bias) [35 minutes]
+* Movement break [5 minutes]
+* [What can we learn from exploring and visualizing data from Spotify's API?](#spotify) [40]
+* Capstone [60 minutes]
+
+---
+## Hi, I'm Liza!
+
+.pull-left[
+
+You can call me Liza (pronounced like: "lie" and "zuh"). 
+
+* liza.bolton@utoronto.ca
+* Assistant Professor, Teaching Stream
+* Department of Statistical Science, Univeristy of Toronto
+
+.midi[
+I currently teach a range of university courses, but all of them touch on how we explore and visualize data, how we can learn from data, how we communicate what we find to others (statisticians and non-statisticians alike) and ethical considerations for people making decisions with data. ]
+]
+
+.pull-right[
+.small[
+* I used to be a Statistical Consultant in New Zealand, working with small and medium companies on a big range of topics, from things like vehicle traffic to people's experiences in their first jobs after university.
+* My research interests include how people's social and economic positions are related to health and topics in statistics education.
+* What do stats undergraduates do? One of my students is currently finishing a project on Broadway musicals, while another is looking at big events like terrorist attacks or elections influence people's confidence in spending money. Students in my consulting course are exploring mask-wearing behaviour in Toronto, how COVID has impacted how people use the university library, the survival of painted turtles and the mating habits of Japanese fish.
+
+__Data are everywhere and so statistical skills are needed everywhere too.__
+]
+]
+
+---
+### Introductions in the New Zealand way
+
+&lt;img src="libs/images/mihi1.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="libs/images/mihi2.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="libs/images/liza-lies.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.pull-left[
+Nnenna and I have worked on several things together. She is currently a teaching assistant for my 3rd year course and these are photos from some Zoom events we ran in the department in 2020. We both love statistics and dressing up!
+
+&lt;img src="libs/images/halloween.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="libs/images/packages.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Wanna see more of what our department gets up to? Check out our recent news: https://www.statistics.utoronto.ca/news]
+
+]
+
+
+---
+## Nnenna Asidianya
+
+Hi, I'm Nnenna. I am in my second year as a PhD student in the Department of Statistical Sciences at University of Toronto.
+
+.midi[Since I began my career in biological sciences, a lot of my earlier work was at the interface of clinical sciences and life sciences.  In the past, I did quite a lot of work in clinical sciences and published a paper in Gastric cancer risk and non-native status in Ontario. Currently, I am collaborating on a project with a nephrologist that will examine the risk factors for kidney graft failure.
+
+I am also interested in geospatial statistics. This may be informed by my interest in disease progression and how we can really examine the factors that influence the progression over time.    
+
+For the past few terms, I have taught introductory statistics to social science students. In this course we have covered a broad range of topics in relation to the pandemic. One that comes up is distance education and the ramifications of online learning considering the pandemic. There is a lot of space for statistical education that is emerging which is something that has always been an interest for me. There is a lot you can really explore with statistical sciences!]
+
+---
+
+&lt;img src="libs/images/nnenna-lies.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle, center, inverse
+name: stats
+# What are statistics and data science?
+
+.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+
+---
+# Statistics and data science
+
+Statistics is the art and science of __learning from data__. It also gives us ways to quantify __uncertainty.__
+
+Data Science is a relatively new interdisciplinary field that also includes the computational aspects of acquiring, managing, and analysing data. Both __reasoning__ with and __computing__ with data play important roles in these related disciplines. 
+
+
+---
+## What are they not?
+
+Statistics and data science are _NOT_...
+
+.pull-left[
+&lt;img src="libs/images/big-head.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="libs/images/cat-type.gif" width="75%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+.pull-left[
+&lt;img src="libs/images/certain.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="libs/images/cat-type.gif" width="75%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+&lt;img src="libs/images/career.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="libs/images/one-word.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle, center, inverse
+name: bias
+# What is algorithmic bias?
+
+.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+
+---
+## Algorithmic bias
+
+.midi[Prediction models are taught what they "know" from training data. 
+Training data can be incomplete, biased, or skewed. This can result in
+__algorithmic bias__.]
+
+### Proxy variables
+
+.midsmall[There can also be situations where we know we DON'T want to use a variable as part of an algorithm, for ethical and often legal reasons (anti-discrimination laws about gender, race, health status, e.g. American's with Disabilities Act means you can't discriminate against people with mental health conditions). BUT there might be other variables in your data, like certain types of hobbies/memberships, home address, 'personality' quiz questions, that act as 'proxies' for these things, meaning they end of determining outcomes even when you don't want them to.]
+
+.small[
+__Optional reading__
++ Amazon scrapped 'sexist AI' tool, BBC, 2018. https://www.bbc.com/news/technology-45809919 
++ Amazon discreetly abandoned gender-biased AI-based recruiting tool, HRK News, 2018 https://www.hrkatha.com/recruitment/amazon-discreetly-abandoned-gender-biased-ai-based-recruiting-tool/
+]
+
+---
+## Should algorithms be transparent?
+
+Some predictive algorithms give us more than just a prediction: they also give us some
+insight as to what factor(s) influenced the prediction. Examples you might have encountered in your studies already include linear regression models and classification trees.
+
+Other algorithms yield predictions, but no information about how it got from the inputs
+to the prediction, such as neural networks (you may see these in future courses). These are sometimes called 'black box' algorithms and many machine learning tools fall into this. We'll briefly talk more about this when we discuss generalized additive models later in the course. 
+
+What is more important - getting the most accurate predictions, or understanding the factor(s) which influence a prediction?
+
+---
+class: middle 
+
+## Suggested reading
+
+Lum, K &amp; Isaac, W. _To predict and serve?_ (2016). https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2016.00960.x#sign960-bib-0001
+
+.pull-left[
+.midi[
+This article is an excellent and accessible introduction to ideas around predictive policing and the current issues.  
+
+(Lum's other work, previously as the Lead Statistician at the Human Rights Data Analysis Group and now as a prof at the University of Pennsylvania is awesome!)
+]]
+
+.pull-right[
+
+&lt;img src="libs/images/precog.gif" width="95%" style="display: block; margin: auto;" /&gt;
+
+.small[(If you've seen Minority Report, maybe you were already skeptical about predicting crimes before they happen...but probably for different reasons.)
+]]
+
+---
+class: middle, center, inverse
+name: spotify
+# What can we learn from exploring and visualizing data from Spotify's API?
+
+.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+
+---
+
+## Using an API
+
+API stands for __a__pplication __p__rogramming __i__nterface. 
+
+It is a structured way for data (broadly) requests to be made and fulfilled with computers. 
+
+I like [this](https://www.howtogeek.com/343877/what-is-an-api/) comparison to a restaurant menu. You don't need to know HOW to make crème brûlée to be able to know you WANT it.
+
+--
+
+If you are using an API, there still may be rules about things like how many requests you can make in a certain time frame and rate limiting. Make sure you're aware of these rules and behave in the spirit of them!
+
+Optional reading: https://beanumber.github.io/mdsr2e/ch-ethics.html#sec:terms-of-use 
+
+---
+.pull-left[
+.tiny[
+
+|artist         |vibe                                   |
+|:--------------|:--------------------------------------|
+|Ariana Grande  |energising                             |
+|Ariana Grande  |hard to classify                       |
+|Ariana Grande  |relaxing                               |
+|Billie Eilish  |                                       |
+|Billie Eilish  |Energising                             |
+|Billie Eilish  |neither/hard to classify               |
+|Bruno Mars     |                                       |
+|BTS            |Hard to classify their music is varied |
+|Central Cee    |energising                             |
+|daniel ceaser  |neither/hard to classify               |
+|Daniel Ceaser  |                                       |
+|Digga D        |neither/hard to classify               |
+|Ellise         |hard to classify                       |
+|Fall out boy   |hard to classify                       |
+|Got7           |Energising                             |
+|Harry Styles   |energising                             |
+|Jeff Bernat    |Relaxing                               |
+|Kendrick Lamar |                                       |
+]
+]
+
+.pull-left[
+.tiny[
+
+|artist            |vibe                                     |
+|:-----------------|:----------------------------------------|
+|Lil Tjay          |both                                     |
+|Lil Tjay          |energising                               |
+|Lorde             |neither/hard to classify                 |
+|Mac Ayres         |Relaxing                                 |
+|Melanie Martinez  |Energising                               |
+|Mitski            |Energising                               |
+|NF                |Energising                               |
+|Nicki Minaj       |Hard to classify it depends on the song. |
+|Polo G            |energising                               |
+|queen             |neither/hard to classify                 |
+|Rex Orange County |Relaxing                                 |
+|Rihanna           |Pon de Replay                            |
+|Rod Wave          |                                         |
+|Shenseea          |Energising                               |
+|Taylor Swift      |energising                               |
+|The Strokes       |Neither                                  |
+|Toosii            |both                                     |
+|tyler the creator |relaxing                                 |
+]
+]
+
+
+
+---
+## Data dictionary (reference slides)
+
+Description of variables available to you (3 slides). 'Class'
+
+|variable                 |class     |description |
+|:---|:---|:-----------|
+|artist_name             |character | Song artist|
+|artist_popularity       |number | Popularity score (0-100) based on track play and recency. Higher is better |
+|artist_followers        |number | Number of people who 'follow' the artist on Spotify|
+|album_name              |character| Name of the album the song if from |
+|album_release_year      |number | Year of album release|
+|track_name              |character | Song name|
+
+---
+
+.small[
+|variable                 |class     |description |
+|:---|:---|:-----------|
+|danceability            |number    | Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. |
+|energy                   |number    | Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy. |
+|loudness                 |number    | The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.|
+|speechiness              |number    | Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks. |
+|acousticness             |number    | A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.|
+]
+
+---
+
+.small[
+|variable                 |class     |description |
+|:---|:---|:-----------|
+|instrumentalness         |number    | Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0. |
+|liveness                 |number    | Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live. |
+|valence                  |number    | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). |
+|tempo                    |number    | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. |
+|mode_name                    |character    | Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. |
+|duration_ms                    |number    | Length of the song in miliseconds. |
+|explicit                       |logical   | Is the song rated explicit? |
+|artist_genre                   |character | This variable is still a little messy, but you can see the genres that the artist's music is considered to belong to.|
+]
+
+
+
+---
+# A playlist
+
+I made a new __variable__ that was just `danceability` score + `valence` score and found the track with the highest values for each of the artists:
+
+https://music.youtube.com/playlist?list=PLbNVvLDdpWVKZWcUoeeMyrY4oNFtEiUU5
+
+(There is actually a way to make a Spotify playlist directly from the statistical software I use, but I haven't got my authorizations set up properly yet...YouTube music is the one I have ad-free, anyway)
+
+---
+class: inverse, middle
+
+# Capstone time!
+
+.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
