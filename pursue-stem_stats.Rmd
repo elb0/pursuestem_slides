@@ -1,36 +1,60 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Statistics and Data Science</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Nnenna Asidianya and Liza Bolton" />
-    <meta name="date" content="2021-04-24" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
-    <script src="libs/clipboard/clipboard.min.js"></script>
-    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
-    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
-    <link rel="stylesheet" href="slides.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-class: center, middle, inverse, title-slide
-
-# Statistics and Data Science
-## Pursue STEM 2021
-### Nnenna Asidianya and Liza Bolton
-### April 24, 2021
-
+---
+title: "Statistics and Data Science"
+subtitle: "Pursue STEM 2021"
+author: "Nnenna Asidianya and Liza Bolton"
+date: "April 24, 2021"
+output:
+  xaringan::moon_reader:
+    css: "slides.css"
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
 ---
 
+```{r setup, include=FALSE}
+# R options
+options(
+  htmltools.dir.version = FALSE, # for blogdown
+  show.signif.stars = FALSE,     # for regression output
+  warm = 1,
+  crayon.enabled = FALSE
+  )
+# Set dpi and height for images
+library(knitr)
+opts_chunk$set(fig.height = 2.65, dpi =300, warning=FALSE, message=FALSE) 
+# ggplot2 color palette with gray
+color_palette <- list(gray = "#999999", 
+                      salmon = "#E69F00", 
+                      lightblue = "#56B4E9", 
+                      green = "#009E73", 
+                      yellow = "#F0E442", 
+                      darkblue = "#0072B2", 
+                      red = "#D55E00", 
+                      purple = "#CC79A7")
 
+library(tidyverse)
+library(gridExtra)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+### xaringan::inf_mr() -> use this for display within Rstudio
 
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = "none"
+)
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
 
 name: topics
 
@@ -47,18 +71,22 @@ class: middle, center, inverse
 name: welcome
 # What are we doing today?
 
-.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+.header[<u>[Go to topics list](#topics)</u>]
 
 ---
 
-&lt;img src="libs/images/2021-04-24_cherry-blossoms.jpg" width="88%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="88%"}
+knitr::include_graphics("libs/images/2021-04-24_cherry-blossoms.jpg")
+```
 
 .small[.footnote[Cherry trees outside Robarts Library, University of Toronto, St George Campus, 2021-04-24]]
 
 ---
 ## Go to https://pollev.com/bolton to answer (keep the link open)
 
-&lt;img src="libs/images/bts.png" width="55%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="55%"}
+knitr::include_graphics("libs/images/bts.png")
+```
 
 
 .footnote[Doesn't matter if you don't know who's who, just go with the vibe.]
@@ -103,25 +131,35 @@ __Data are everywhere and so statistical skills are needed everywhere too.__
 ---
 ### Introductions in the New Zealand way
 
-&lt;img src="libs/images/mihi1.png" width="75%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("libs/images/mihi1.png")
+```
 
 ---
 
-&lt;img src="libs/images/mihi2.png" width="65%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="65%"}
+knitr::include_graphics("libs/images/mihi2.png")
+```
 
 ---
 
-&lt;img src="libs/images/liza-lies.png" width="85%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="85%"}
+knitr::include_graphics("libs/images/liza-lies.png")
+```
 
 ---
 
 .pull-left[
 Nnenna and I have worked on several things together. She is currently a teaching assistant for my 3rd year course and these are photos from some Zoom events we ran in the department in 2020. We both love statistics and dressing up!
 
-&lt;img src="libs/images/halloween.png" width="100%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+knitr::include_graphics("libs/images/halloween.png")
+```
 ]
 .pull-right[
-&lt;img src="libs/images/packages.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+knitr::include_graphics("libs/images/packages.jpeg")
+```
 
 .footnote[Wanna see more of what our department gets up to? Check out our recent news: https://www.statistics.utoronto.ca/news]
 
@@ -141,14 +179,16 @@ For the past few terms, I have taught introductory statistics to social science 
 
 ---
 
-&lt;img src="libs/images/nnenna-lies.png" width="85%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="85%"}
+knitr::include_graphics("libs/images/nnenna-lies.png")
+```
 
 ---
 class: middle, center, inverse
 name: stats
 # What are statistics and data science?
 
-.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+.header[<u>[Go to topics list](#topics)</u>]
 
 ---
 # Statistics and data science
@@ -164,46 +204,66 @@ Data Science is a relatively new interdisciplinary field that also includes the 
 Statistics and data science are _NOT_...
 
 .pull-left[
-&lt;img src="libs/images/big-head.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+knitr::include_graphics("libs/images/big-head.jpeg")
+```
 ]
 
 .pull-right[
-&lt;img src="libs/images/cat-type.gif" width="75%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("libs/images/cat-type.gif")
+```
 ]
 
 ---
 .pull-left[
 ## What is statistics?
-&lt;img src="libs/images/certain.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("libs/images/certain.png")
+```
 ]
 
 .pull-right[
-&lt;img src="libs/images/art-science.png" width="75%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="75%"}
+knitr::include_graphics("libs/images/art-science.png")
+```
 ]
 
 ---
 ## What is statistics?
 
-&lt;img src="libs/images/communication.png" width="90%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+knitr::include_graphics("libs/images/communication.png")
+```
 
 ---
 ## Who needs statisticians and data scientists?
 
-&lt;img src="libs/images/who-needs.png" width="95%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="95%"}
+knitr::include_graphics("libs/images/who-needs.png")
+```
 
 ---
 
-&lt;img src="libs/images/you-need.png" width="70%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="70%"}
+knitr::include_graphics("libs/images/you-need.png")
+```
 
 ---
 
-&lt;img src="libs/images/shoulder.png" width="85%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="85%"}
+knitr::include_graphics("libs/images/shoulder.png")
+```
 
 ---
 
-&lt;img src="libs/images/career.png" width="85%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="85%"}
+knitr::include_graphics("libs/images/career.png")
+```
 
-&lt;img src="libs/images/one-word.png" width="85%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="85%"}
+knitr::include_graphics("libs/images/one-word.png")
+```
 
 ---
 
@@ -251,7 +311,7 @@ class: middle, center, inverse
 name: bias
 # What is algorithmic bias?
 
-.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+.header[<u>[Go to topics list](#topics)</u>]
 
 ---
 ## Algorithmic bias
@@ -286,7 +346,7 @@ class: middle
 
 ## Suggested reading
 
-Lum, K &amp; Isaac, W. _To predict and serve?_ (2016). https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2016.00960.x#sign960-bib-0001
+Lum, K & Isaac, W. _To predict and serve?_ (2016). https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2016.00960.x#sign960-bib-0001
 
 .pull-left[
 .midi[
@@ -297,7 +357,9 @@ This article is an excellent and accessible introduction to ideas around predict
 
 .pull-right[
 
-&lt;img src="libs/images/precog.gif" width="95%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="95%"}
+include_graphics("libs/images/precog.gif")
+```
 
 .small[(If you've seen Minority Report, maybe you were already skeptical about predicting crimes before they happen...but probably for different reasons.)
 ]]
@@ -307,14 +369,16 @@ class: middle, center, inverse
 
 # Movement break (5 mins)
 
-&lt;img src="libs/images/stretch.png" width="70%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE, fig.align='center', out.width="70%"}
+include_graphics("libs/images/stretch.png")
+```
 
 ---
 class: middle, center, inverse
 name: spotify
 # What can we learn from exploring and visualizing data from Spotify's API?
 
-.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+.header[<u>[Go to topics list](#topics)</u>]
 
 ---
 
@@ -335,53 +399,23 @@ Optional reading: https://beanumber.github.io/mdsr2e/ch-ethics.html#sec:terms-of
 ---
 .pull-left[
 .tiny[
-
-|artist         |vibe                                   |
-|:--------------|:--------------------------------------|
-|Ariana Grande  |energising                             |
-|Ariana Grande  |hard to classify                       |
-|Ariana Grande  |relaxing                               |
-|Billie Eilish  |                                       |
-|Billie Eilish  |Energising                             |
-|Billie Eilish  |neither/hard to classify               |
-|Bruno Mars     |                                       |
-|BTS            |Hard to classify their music is varied |
-|Central Cee    |energising                             |
-|daniel ceaser  |neither/hard to classify               |
-|Daniel Ceaser  |                                       |
-|Digga D        |neither/hard to classify               |
-|Ellise         |hard to classify                       |
-|Fall out boy   |hard to classify                       |
-|Got7           |Energising                             |
-|Harry Styles   |energising                             |
-|Jeff Bernat    |Relaxing                               |
-|Kendrick Lamar |                                       |
+```{r, echo=FALSE}
+readRDS("data/student.RDS") %>% 
+  arrange(artist) %>% 
+  slice(1:18) %>% 
+  knitr::kable()
+```
 ]
 ]
 
 .pull-left[
 .tiny[
-
-|artist            |vibe                                     |
-|:-----------------|:----------------------------------------|
-|Lil Tjay          |both                                     |
-|Lil Tjay          |energising                               |
-|Lorde             |neither/hard to classify                 |
-|Mac Ayres         |Relaxing                                 |
-|Melanie Martinez  |Energising                               |
-|Mitski            |Energising                               |
-|NF                |Energising                               |
-|Nicki Minaj       |Hard to classify it depends on the song. |
-|Polo G            |energising                               |
-|queen             |neither/hard to classify                 |
-|Rex Orange County |Relaxing                                 |
-|Rihanna           |Pon de Replay                            |
-|Rod Wave          |                                         |
-|Shenseea          |Energising                               |
-|Taylor Swift      |energising                               |
-|The Strokes       |Neither                                  |
-|Toosii            |both                                     |
-|tyler the creator |relaxing                                 |
+```{r, echo=FALSE}
+readRDS("data/student.RDS") %>% 
+  arrange(artist) %>% 
+  slice(19:36) %>% 
+  knitr::kable()
+```
 ]
 ]
 
@@ -431,7 +465,7 @@ Description of variables available to you (3 slides). 'Class'
 ---
 # What I really hope works
 
-Go to this link: https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Felb0%2Fpursuestem_activity&amp;urlpath=shiny%2Fpursuestem_activity%2Finst%2Ftutorials%2Fpursuestem%2F&amp;branch=master
+Go to this link: https://jupyter.utoronto.ca/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Felb0%2Fpursuestem_activity&urlpath=shiny%2Fpursuestem_activity%2Finst%2Ftutorials%2Fpursuestem%2F&branch=master
 
 It may ask you to log in! Use the same login that gives you access to Quercus. 
 
@@ -459,130 +493,10 @@ class: inverse, middle
 
 # Capstone time!
 
-.header[&lt;u&gt;[Go to topics list](#topics)&lt;/u&gt;]
+.header[<u>[Go to topics list](#topics)</u>]
 
+```{r eval = FALSE, echo = FALSE}
 
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9"
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
+pagedown::chrome_print("pursue-stem_stats.html", wait = 20)
 
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+```
